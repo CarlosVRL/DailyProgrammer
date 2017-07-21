@@ -28,9 +28,9 @@
 #include <fstream>
 #include <sstream>
 
+#include <cstdlib>
 #include <vector>
 #include <set>
-#include <cstdlib>
 
 std::ifstream fin("in");
 std::ofstream out("out");
@@ -40,7 +40,7 @@ std::ofstream out("out");
 using namespace std;
 
 /**
- *  reads a spaced " " string of integers into vector
+ * reads a spaced " " string of integers into vector
  */
 vector<int> parse_int_line(string line);
 
@@ -79,7 +79,7 @@ int main()
  * @param  line a space-separated character stream containing integers
  * @return      STL vector containing the integer values
  *
- * implicit conversion: will not throw error for invalid input
+ * implicit conversion: will not throw error for invalid (non-digit) characters
  */
 
 vector<int> parse_int_line(string line)
