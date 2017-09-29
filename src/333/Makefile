@@ -1,2 +1,2 @@
-a: PacketAssembler.cpp
+a: PacketAssembler.cpp PacketElement.h
 	g++ -o a PacketAssembler.cpp -I.
