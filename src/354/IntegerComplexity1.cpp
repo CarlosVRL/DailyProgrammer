@@ -3,7 +3,6 @@
 #include <iomanip>
 #include <vector>
 
-
 /**
  * Challenge #354 [Easy] Integer Complexity 1
  * 
