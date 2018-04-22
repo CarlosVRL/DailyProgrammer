@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -98,7 +99,7 @@ int bruteforceIntegerComplexity(int num)
 }
 
 /**
- * Algorithm examples.
+ * Algorithm examples with benchmarking.
  */
 void examples()
 {
@@ -109,8 +110,13 @@ void examples()
     a.push_back(12345);
     std::vector<int>::iterator it = a.begin();
     std::vector<int>::iterator et = a.end();
+    auto start = std::chrono::high_resolution_clock::now();
     for (; it != et; ++it)
     {
         std::cout << std::setw(MAX_DIGITS) << *it << " => " << bruteforceIntegerComplexity(*it) << std::endl;
     }
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout.precision(std::numeric_limits<double>::max_digits10);
+    std::cout << "Elapsed time : " << std::fixed << elapsed.count() << std::endl;
 }
